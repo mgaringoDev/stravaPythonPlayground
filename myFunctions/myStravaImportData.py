@@ -11,6 +11,27 @@ class stravaInfo:
 
 
 	def getAllActivities(self,payload):
+		"""
+		Read a specified .def DECI file into the class.  Note that the .def is the txt file version of the output of DECI.
+
+		Parameters:
+		    payload (dict): The dictionary for the payload for the API an example can be seen below
+
+		Returns:
+		    myEntireData (list): A list of dictionaries for each session
+		
+		Example:
+			This is an example on how to use it::
+		
+				payload = {
+			         'client_id': "xxx",
+			         'client_secret': 'xxxxx',
+			         'refresh_token': 'xxxx',
+			         'grant_type': "refresh_token",
+			         'f': 'json'
+			     }
+		
+		""" 
 	    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 	    auth_url = "https://www.strava.com/oauth/token"

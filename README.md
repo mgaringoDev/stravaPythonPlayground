@@ -8,10 +8,6 @@ Just fooling around with the Strava API and creating some random visualization. 
 - [ ] geotagging
 
 
-#  Inspirations and code from the following creators
-- [Fran Polignano](https://github.com/fpolig01/Code_From_Tutorials/tree/master/Strava_Api)
-	- Added some visualization
-
-- [Col Carroll](https://github.com/ColCarroll/strava_calendar)
-	- Imporved it by adding API functionality
+# Acknowledgements
+Check the acknowledgments for all the inspirations and open source code from various creators.
 
