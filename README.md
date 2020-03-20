@@ -2,8 +2,8 @@
 Just fooling around with the Strava API and creating some random visualization.  Using this just to learn multiple visualization techniques.
 
 # Implementation and Goals:
-- [ ] calendar
-- [ ] leaflet
+- [x] calendar
+- [x] leaflet
 - [ ] D3
 - [ ] geotagging
 
