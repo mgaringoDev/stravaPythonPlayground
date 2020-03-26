@@ -4,6 +4,9 @@ Just fooling around with the Strava API and creating some random visualization. 
 # Implementation and Goals:
 - [x] calendar
 - [x] leaflet
+- [x] heatmap
+- [ ] graphing activity
+	- [ ] Running data
 - [ ] D3
 - [ ] geotagging
 

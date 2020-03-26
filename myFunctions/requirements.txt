@@ -1,0 +1,14 @@
+numpy
+scipy
+pandas
+scikit-learn
+matplotlib
+seaborn
+bokeh
+plotly
+folium
+polyline
+mplleaflet
+requests
+urllib3
+fitparse
