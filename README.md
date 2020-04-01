@@ -8,8 +8,6 @@ Just fooling around with the Strava API and creating some random visualization. 
 - [ ] graphing activity
 	- [ ] Running data
 - [ ] D3
-- [ ] geotagging
-
 
 # Acknowledgements
 Check the acknowledgments for all the inspirations and open source code from various creators.
