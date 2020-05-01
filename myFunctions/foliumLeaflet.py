@@ -94,4 +94,10 @@ def drawSessions(rSessions,mapLinesArgs):
     return myMapSessions
 
 def saveMap(foliumMap,saveName):
+    """
+    Save the map to and html file
+    Args:
+        foliumMap (folium): The folium map to be saved.
+        saveName (str): The path name or the HTML to be saved.
+    """
     foliumMap.save(saveName)

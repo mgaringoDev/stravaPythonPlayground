@@ -11,10 +11,26 @@ import datetime as datetime
 
 class stravaInfo:
 
+    """
+    Class to contain all the strava data manipulation
+    
+    Attributes:
+        stravaData (list): All strava data
+        subsetData (list): Subsets of strava data usually used for manipulation later
+    """
+    
     stravaData = []
     subsetData = []
     
     def __init__(self,arg,readNewDataFlag=True,pickleFile="./vars/myData.pickle"):
+        """
+        Initialize the class
+        
+        Args:
+            arg (dict): Dictionary arguments for the payload see example of this in the getAllActivities method.
+            readNewDataFlag (bool, optional): Flag to retreave new data
+            pickleFile (str, optional): Retreave data from the saved pickle file
+        """
         print('Active')
         if readNewDataFlag:
             self.stravaData = self.getAllActivities(arg)
@@ -24,11 +40,11 @@ class stravaInfo:
 
     def getAllActivities(self,payload):
         """
-        Read a specified .def DECI file into the class.  Note that the .def is the txt file version of the output of DECI.
-
+        Get all activities from stava using API called to strava server
+        
         Parameters:
             payload (dict): The dictionary for the payload for the API an example can be seen below
-
+        
         Returns:
             myEntireData (list): A list of dictionaries for each session
         
@@ -43,7 +59,7 @@ class stravaInfo:
                      'f': 'json'
                  }
         
-        """ 
+        """
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
         auth_url = "https://www.strava.com/oauth/token"
@@ -90,6 +106,19 @@ class stravaInfo:
         return myEntireData
 
     def getActivityByDateRange(self,sessionsData,startDate,endDate,excludeDates=[],includeArea=['Toronto']):
+        """        
+        Get a subset of activities from a certain date range.
+        
+        Args:
+            sessionsData (dict): All strava activity
+            startDate (str): Start date of activity to be obtained
+            endDate (str): End date of activity to be obtained
+            excludeDates (list, optional): List of dates to be ignored
+            includeArea (list, optional): String of areas to be included in the data
+        
+        Returns:
+            dict: Dictionary of the activities between the specified date range
+        """
         # get all the dates within the specified start and end dates
         dateRanges = self.allDatesStartEnd(startDate,endDate)
 
@@ -115,6 +144,16 @@ class stravaInfo:
 
 
     def allDatesStartEnd(self,sDate,eDate):
+        """
+        Utility function to get all the dates between two dates.
+
+        Args:
+            sDate (str): Start date
+            eDate (str): End date
+        
+        Returns:
+            list: List of all dates between the start and end dates.
+        """
         allDatesInRange = []
         
         sDate = datetime.datetime.strptime(sDate, "%Y-%m-%d")
@@ -131,15 +170,15 @@ class stravaInfo:
     def getDate(activity):
         """
         Get the date of a given activities
-
+        
         Parameters:
             activity (dict): this is a dictionary of a session.  Check strava API for more detail
-
+        
         Returns:
             actYear (int): year when the activity took place
             actMonth (int): month when the activity took place
             actDay (int): day when the activity took place
-        """ 
+        """
         actDate = activity["start_date"].split('T')[0]
         actYear = int(actDate.split('-')[0])
         actMonth = int(actDate.split('-')[1])
@@ -148,6 +187,14 @@ class stravaInfo:
         return actYear,actMonth,actDay
 
     def getTypeData(self,activityType='Run'):
+        """
+        Get only a specific type of data. 
+        * 'Run' - running data
+        * 'Ride' - biking data
+
+        Args:
+            activityType (str, optional): String of the activity
+        """
         typeData = []
 
         for activity in self.stravaData:
@@ -158,7 +205,28 @@ class stravaInfo:
 
 
     def drawRoutesMap(self,mapArgs,saveMap=False,saveMapName='./outFile/routeMap.html',sessionsData = []):
+        """
+        Draws the routes on a map
+
+
+
+        Args:
+            mapArgs (TYPE): These are the map parameters for drawing the sessesions::
+
+            myMapLinesArgs = {
+                'tiles': 'Cartodb Positron',
+                'zoom': 3,
+                'lineWeight': 3,
+                'lineCol':'#3388ff'
+                }
+
+            saveMap (bool, optional): 
+            saveMapName (str, optional): File name or lacation to save the map ``(.html)``
+            sessionsData (list, optional): If no sessions are passed then the subset sessions are used to create the map
         
+        Returns:
+            folium map: Returns the foloium map of the sessions
+        """
         if len(sessionsData)==0:
             sessionsData = self.subsetData
 
@@ -171,6 +239,20 @@ class stravaInfo:
 
     
     def DrawHeatMap(self,sessionsData = [],heatmap_radius = 5,heatmap_blur = 5,saveMap=False,saveMapName='./outFile/heatMap.html'):
+        """
+
+        Draws the heat map of the seesions
+        
+        Args:
+            sessionsData (list, optional): List of the session data
+            heatmap_radius (int, optional): Radius of the heat maps
+            heatmap_blur (int, optional): Blurring effect of the heat map
+            saveMap (bool, optional): Flag to save the map or not
+            saveMapName (str, optional): File name or lacation to save the map ``(.html)``
+        
+        Returns:
+            folium map: Returns the foloium map of the sessions
+        """
         if len(sessionsData)==0:
             sessionsData = self.subsetData
 
@@ -183,6 +265,21 @@ class stravaInfo:
 
 
     def drawCalendarmap(self,sessionsData=[],start=None,end=None,edgecolor='black',mean=False,saveImageFlag=False,saveImageName='./outFile/calendarMap.svg'):        
+        """
+        Creates a calendar map of sessions from the specified start and end dates.
+
+        Args:
+            sessionsData (list, optional): List of sessions to be used to draw on the map
+            start (None, optional): String for the start date
+            end (None, optional): String for the end date
+            edgecolor (str, optional): Colour of the edeges
+            mean (bool, optional): NEED TO CHECK
+            saveImageFlag (bool, optional): Flag to save the map or not
+            saveImageName (str, optional): File name or lacation to save the map ``(.html)``
+
+        Todo:
+            * Check what I used the mean for.
+        """
         # Transform the current data into a series data used for plotting
         if len(sessionsData)==0:
             sessionsData = self.subsetData

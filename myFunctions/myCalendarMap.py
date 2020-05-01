@@ -4,7 +4,15 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 def getPandasSeriesData(data):
-	    # get the index and values for the data frame
+        """Summary
+        
+        Args:
+            data (pandas data frame): The pandas data frame of the strava data 
+        
+        Returns:
+            TYPE: The pandas data frame of the strava data with the dates being the indices
+        """
+        # get the index and values for the data frame
 	    index = []
 	    values = []
 
@@ -19,31 +27,24 @@ def getPandasSeriesData(data):
 	    
 def date_heatmap(series, start=None, end=None, mean=False, ax=None, **kwargs):
     '''Plot a calendar heatmap given a datetime series.
-
+    
     Arguments:
-        series (pd.Series):
-            A series of numeric values with a datetime index. Values occurring
+        series (pd.Series): A series of numeric values with a datetime index. Values occurring
             on the same day are combined by sum.
-        start (Any):
-            The first day to be considered in the plot. The value can be
+        start (Any): The first day to be considered in the plot. The value can be
             anything accepted by :func:`pandas.to_datetime`. The default is the
             earliest date in the data.
-        end (Any):
-            The last day to be considered in the plot. The value can be
+        end (Any): The last day to be considered in the plot. The value can be
             anything accepted by :func:`pandas.to_datetime`. The default is the
             latest date in the data.
-        mean (bool):
-            Combine values occurring on the same day by mean instead of sum.
-        ax (matplotlib.Axes or None):
-            The axes on which to draw the heatmap. The default is the current
+        mean (bool): Combine values occurring on the same day by mean instead of sum.
+        ax (matplotlib.Axes or None): The axes on which to draw the heatmap. The default is the current
             axes in the :module:`~matplotlib.pyplot` API.
-        **kwargs:
-            Forwarded to :meth:`~matplotlib.Axes.pcolormesh` for drawing the
+        **kwargs: Forwarded to :meth:`~matplotlib.Axes.pcolormesh` for drawing the
             heatmap.
-
+    
     Returns:
-        matplotlib.collections.Axes:
-            The axes on which the heatmap was drawn. This is set as the current
+        matplotlib.collections.Axes: The axes on which the heatmap was drawn. This is set as the current
             axes in the `~matplotlib.pyplot` API.
     '''
     DAYS = ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thurs.', 'Fri.', 'Sat.']

@@ -4,7 +4,16 @@ from folium.plugins import HeatMap
 import polyline
 
 def getHeatMap(sessions,heatmap_radius = 5,heatmap_blur = 5):
-
+	"""Summary
+	
+	Args:
+	    sessions (dict): Dictionary of the running sessions
+	    heatmap_radius (int, optional): Radius of the heat maps
+	    heatmap_blur (int, optional): Blurring effect of the heat map
+	
+	Returns:
+	    TYPE: the folium map of the heat map for the sessions
+	"""
 	print('Now draw heatmap for {} sessions'.format(len(sessions)))
 	allSessionCoords = []
 
@@ -59,4 +68,10 @@ def getHeatMap(sessions,heatmap_radius = 5,heatmap_blur = 5):
 	return fmap
 
 def saveMap(foliumMap,saveName):
+	"""
+    Save the map to and html file
+    Args:
+        foliumMap (folium): The folium map to be saved.
+        saveName (str): The path name or the HTML to be saved.
+    """
 	foliumMap.save(saveName)
