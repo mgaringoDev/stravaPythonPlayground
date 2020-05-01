@@ -3,7 +3,7 @@ import urllib3
 import myFunctions.myPickle as myPickle
 import myFunctions.myCalendarMap as myCalendarmap
 import myFunctions.foliumLeaflet as flmap
-import myFunctions.myHeatMap as myHeatmap
+import myFunctions.myHeatmap as myHeatmap
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import datetime as datetime

@@ -13,18 +13,18 @@ def getPandasSeriesData(data):
             TYPE: The pandas data frame of the strava data with the dates being the indices
         """
         # get the index and values for the data frame
-	    index = []
-	    values = []
+        index = []
+        values = []
 
-	    for d in data:
-	        index.append(d['start_date'].split('T')[0])
-	        values.append(int(d['distance']/1000.0))
-	        
-	    # create the data frame where index are the dates and distances are the values
-	    df = pd.Series(values)
-	    df.index = pd.DatetimeIndex(index)        
-	    return df
-	    
+        for d in data:
+            index.append(d['start_date'].split('T')[0])
+            values.append(int(d['distance']/1000.0))
+            
+        # create the data frame where index are the dates and distances are the values
+        df = pd.Series(values)
+        df.index = pd.DatetimeIndex(index)        
+        return df
+        
 def date_heatmap(series, start=None, end=None, mean=False, ax=None, **kwargs):
     '''Plot a calendar heatmap given a datetime series.
     

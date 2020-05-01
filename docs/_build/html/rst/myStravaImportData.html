@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>myStravaImportData module &mdash; stravaPythonPlayground 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> stravaPythonPlayground
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">myStravaImportData module</a></li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">stravaPythonPlayground</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>myStravaImportData module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/rst/myStravaImportData.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-myStravaImportData">
+<span id="mystravaimportdata-module"></span><h1>myStravaImportData module<a class="headerlink" href="#module-myStravaImportData" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="myStravaImportData.stravaInfo">
+<em class="property">class </em><code class="sig-prename descclassname">myStravaImportData.</code><code class="sig-name descname">stravaInfo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arg</span></em>, <em class="sig-param"><span class="n">readNewDataFlag</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">pickleFile</span><span class="o">=</span><span class="default_value">'./vars/myData.pickle'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to contain all the strava data manipulation</p>
+<dl class="py attribute">
+<dt id="myStravaImportData.stravaInfo.stravaData">
+<code class="sig-name descname">stravaData</code><a class="headerlink" href="#myStravaImportData.stravaInfo.stravaData" title="Permalink to this definition">¶</a></dt>
+<dd><p>All strava data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="myStravaImportData.stravaInfo.subsetData">
+<code class="sig-name descname">subsetData</code><a class="headerlink" href="#myStravaImportData.stravaInfo.subsetData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subsets of strava data usually used for manipulation later</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.DrawHeatMap">
+<code class="sig-name descname">DrawHeatMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sessionsData</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">heatmap_radius</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">heatmap_blur</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">saveMap</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">saveMapName</span><span class="o">=</span><span class="default_value">'./outFile/heatMap.html'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.DrawHeatMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the heat map of the seesions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionsData</strong> (<em>list</em><em>, </em><em>optional</em>) – List of the session data</p></li>
+<li><p><strong>heatmap_radius</strong> (<em>int</em><em>, </em><em>optional</em>) – Radius of the heat maps</p></li>
+<li><p><strong>heatmap_blur</strong> (<em>int</em><em>, </em><em>optional</em>) – Blurring effect of the heat map</p></li>
+<li><p><strong>saveMap</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to save the map or not</p></li>
+<li><p><strong>saveMapName</strong> (<em>str</em><em>, </em><em>optional</em>) – File name or lacation to save the map <code class="docutils literal notranslate"><span class="pre">(.html)</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the foloium map of the sessions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>folium map</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.allDatesStartEnd">
+<code class="sig-name descname">allDatesStartEnd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sDate</span></em>, <em class="sig-param"><span class="n">eDate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.allDatesStartEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function to get all the dates between two dates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sDate</strong> (<em>str</em>) – Start date</p></li>
+<li><p><strong>eDate</strong> (<em>str</em>) – End date</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>List of all dates between the start and end dates.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.drawCalendarmap">
+<code class="sig-name descname">drawCalendarmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sessionsData</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">edgecolor</span><span class="o">=</span><span class="default_value">'black'</span></em>, <em class="sig-param"><span class="n">mean</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">saveImageFlag</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">saveImageName</span><span class="o">=</span><span class="default_value">'./outFile/calendarMap.svg'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.drawCalendarmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a calendar map of sessions from the specified start and end dates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionsData</strong> (<em>list</em><em>, </em><em>optional</em>) – List of sessions to be used to draw on the map</p></li>
+<li><p><strong>start</strong> (<em>None</em><em>, </em><em>optional</em>) – String for the start date</p></li>
+<li><p><strong>end</strong> (<em>None</em><em>, </em><em>optional</em>) – String for the end date</p></li>
+<li><p><strong>edgecolor</strong> (<em>str</em><em>, </em><em>optional</em>) – Colour of the edeges</p></li>
+<li><p><strong>mean</strong> (<em>bool</em><em>, </em><em>optional</em>) – NEED TO CHECK</p></li>
+<li><p><strong>saveImageFlag</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to save the map or not</p></li>
+<li><p><strong>saveImageName</strong> (<em>str</em><em>, </em><em>optional</em>) – File name or lacation to save the map <code class="docutils literal notranslate"><span class="pre">(.html)</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.drawRoutesMap">
+<code class="sig-name descname">drawRoutesMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mapArgs</span></em>, <em class="sig-param"><span class="n">saveMap</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">saveMapName</span><span class="o">=</span><span class="default_value">'./outFile/routeMap.html'</span></em>, <em class="sig-param"><span class="n">sessionsData</span><span class="o">=</span><span class="default_value">[]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.drawRoutesMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws the routes on a map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mapArgs</strong> (<em>TYPE</em>) – These are the map parameters for drawing the sessesions:</p></li>
+<li><p><strong>= {</strong> (<em>myMapLinesArgs</em>) – ‘tiles’: ‘Cartodb Positron’,
+‘zoom’: 3,
+‘lineWeight’: 3,
+‘lineCol’:’#3388ff’
+}</p></li>
+<li><p><strong>saveMap</strong> (<em>bool</em><em>, </em><em>optional</em>) – </p></li>
+<li><p><strong>saveMapName</strong> (<em>str</em><em>, </em><em>optional</em>) – File name or lacation to save the map <code class="docutils literal notranslate"><span class="pre">(.html)</span></code></p></li>
+<li><p><strong>sessionsData</strong> (<em>list</em><em>, </em><em>optional</em>) – If no sessions are passed then the subset sessions are used to create the map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns the foloium map of the sessions</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>folium map</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.getActivityByDateRange">
+<code class="sig-name descname">getActivityByDateRange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sessionsData</span></em>, <em class="sig-param"><span class="n">startDate</span></em>, <em class="sig-param"><span class="n">endDate</span></em>, <em class="sig-param"><span class="n">excludeDates</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">includeArea</span><span class="o">=</span><span class="default_value">['Toronto']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.getActivityByDateRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a subset of activities from a certain date range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sessionsData</strong> (<em>dict</em>) – All strava activity</p></li>
+<li><p><strong>startDate</strong> (<em>str</em>) – Start date of activity to be obtained</p></li>
+<li><p><strong>endDate</strong> (<em>str</em>) – End date of activity to be obtained</p></li>
+<li><p><strong>excludeDates</strong> (<em>list</em><em>, </em><em>optional</em>) – List of dates to be ignored</p></li>
+<li><p><strong>includeArea</strong> (<em>list</em><em>, </em><em>optional</em>) – String of areas to be included in the data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of the activities between the specified date range</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.getAllActivities">
+<code class="sig-name descname">getAllActivities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">payload</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.getAllActivities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all activities from stava using API called to strava server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>payload</strong> (<em>dict</em>) – The dictionary for the payload for the API an example can be seen below</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of dictionaries for each session</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>myEntireData (list)</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<p>This is an example on how to use it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;client_id&#39;</span><span class="p">:</span> <span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+     <span class="s1">&#39;client_secret&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxxx&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;refresh_token&#39;</span><span class="p">:</span> <span class="s1">&#39;xxxx&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;grant_type&#39;</span><span class="p">:</span> <span class="s2">&quot;refresh_token&quot;</span><span class="p">,</span>
+     <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.getDate">
+<code class="sig-name descname">getDate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.getDate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the date of a given activities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>activity</strong> (<em>dict</em>) – this is a dictionary of a session.  Check strava API for more detail</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>year when the activity took place
+actMonth (int): month when the activity took place
+actDay (int): day when the activity took place</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>actYear (int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="myStravaImportData.stravaInfo.getTypeData">
+<code class="sig-name descname">getTypeData</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">activityType</span><span class="o">=</span><span class="default_value">'Run'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#myStravaImportData.stravaInfo.getTypeData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get only a specific type of data.
+* ‘Run’ - running data
+* ‘Ride’ - biking data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>activityType</strong> (<em>str</em><em>, </em><em>optional</em>) – String of the activity</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="id0">
+<code class="sig-name descname">stravaData</code><em class="property"> = []</em><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="id1">
+<code class="sig-name descname">subsetData</code><em class="property"> = []</em><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Mario Garingo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
