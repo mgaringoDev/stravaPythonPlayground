@@ -16,6 +16,8 @@ Just fooling around with the Strava API and creating some random visualization. 
 - [Heat Maps](https://github.com/mgaringoDev/stravaPythonPlayground/blob/master/notebookExamples/_HeatMap%20-%20Calling%20Method.ipynb)
 - [Activity Calendar](https://github.com/mgaringoDev/stravaPythonPlayground/blob/master/notebookExamples/_StavaCalendar%20-%20MyCalendar.ipynb)
 
+# Documentation
+The documentation for the project can be found [here](https://mgaringodev.github.io/stravaPythonPlayground/)
 
 # Acknowledgements
 Check the acknowledgments for all the inspirations and open source code from various creators.
